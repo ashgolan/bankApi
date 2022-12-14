@@ -1,4 +1,4 @@
-import router from "express";
+import { Router } from "express";
 import {
   addNewAccount,
   transferMoney,
@@ -14,7 +14,7 @@ import {
   deleteClient,
 } from "../controllers/users.controllers.js";
 
-export const bankRouter = router();
+export const bankRouter = Router();
 
 bankRouter.post("/users", addNewClient);
 bankRouter.get("/users", getClients);
