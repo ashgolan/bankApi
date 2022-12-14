@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 80vh;
+}
+.addUser-container {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 40vh;
+  justify-content: space-between;
+}
+
+.inputUserProp,
+.submit {
+  padding: 3%;
+  text-align: center;
+}
+
+.inputUserProp::placeholder {
+  text-align: center;
+}
+.title {
+  font-weight: bold;
+  color: brown;
+}

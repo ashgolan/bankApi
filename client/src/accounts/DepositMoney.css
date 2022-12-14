@@ -1,0 +1,17 @@
+.depositMoney-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 30vh;
+  justify-content: space-between;
+}
+
+.deposit-input {
+  padding: 3%;
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
