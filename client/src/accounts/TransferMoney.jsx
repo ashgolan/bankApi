@@ -12,7 +12,7 @@ export default function TransferMoney({ setMessage, setData }) {
     try {
       setMessage({ status: false, text: "" });
 
-      const data = await axios.get(
+      await axios.get(
         `http://localhost:5000/api/accounts/transfer/${transferingDetails.client1Id}/${transferingDetails.client2Id}/${transferingDetails.amount}`
       );
       const data2 = await axios.get(`http://localhost:5000/api/accounts/`);

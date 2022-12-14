@@ -37,7 +37,7 @@ export default function UpdateAccount({ data, setData, setMessage }) {
     try {
       setMessage({ status: false, text: "" });
 
-      const accountData = await axios.put(
+      await axios.put(
         `http://localhost:5000/api/accounts/updateAccount/${accountProps.id}/${accountProps.credit}`
       );
       const accountData2 = await axios.put(

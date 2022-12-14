@@ -11,7 +11,7 @@ export default function AddAccount({ data, setMessage, setData }) {
     try {
       setMessage({ status: false, text: "" });
 
-      const data = axios.post(
+      axios.post(
         `http://localhost:5000/api/accounts/addAccount/${accountData.id}/${accountData.credit}`
       );
       const data2 = await axios.get(`http://localhost:5000/api/accounts/`);

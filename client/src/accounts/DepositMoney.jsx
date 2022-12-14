@@ -10,7 +10,7 @@ export default function DepositMoney({ setMessage, setData }) {
     try {
       setMessage({ status: false, text: "" });
 
-      const data1 = await axios.get(
+      await axios.get(
         `http://localhost:5000/api/accounts/deposit/${dipositDetails.idNumber}/${dipositDetails.amount}`
       );
       const data2 = await axios.get(`http://localhost:5000/api/accounts/`);

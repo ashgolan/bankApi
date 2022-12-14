@@ -12,11 +12,8 @@ export default function AddUser({ data, setMessage, setData }) {
     e.preventDefault();
     try {
       setMessage({ status: false, text: "" });
-      const userData = await axios.post(
-        "http://localhost:5000/api/users/",
-        user
-      );
-      const accountData = await axios.post(
+      await axios.post("http://localhost:5000/api/users/", user);
+      await axios.post(
         `http://localhost:5000/api/accounts/addAccount/${
           user.IdNumber
         }/${10000}`
