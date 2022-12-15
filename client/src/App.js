@@ -53,7 +53,8 @@ function App() {
         </h5>
       )}
       <Routes>
-        <Route path="/" element={<AddUser setMessage={setMessage}></AddUser>} />
+        {/* <Route path="/" element={<addUser setMessage={setMessage}></addUser>} /> */}
+        <Route path="/" element={<Home></Home>} />
         <Route
           path="/addUser"
           element={
