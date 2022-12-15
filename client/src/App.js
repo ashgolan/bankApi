@@ -9,7 +9,6 @@ import AddAccount from "./accounts/AddAccount";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Transaction from "./accounts/Transaction";
-import Home from "./Home";
 function App() {
   const [data, setData] = useState({
     usersData: [],
@@ -23,9 +22,11 @@ function App() {
     const fetchData = async () => {
       try {
         setMessage({ status: false, text: "" });
-        const usersData = await axios.get("http://localhost:5000/api/users/");
+        const usersData = await axios.get(
+          "https://ashgolan-bankapi.onrender.com/api/users/"
+        );
         const accountsData = await axios.get(
-          "http://localhost:5000/api/accounts/"
+          "https://ashgolan-bankapi.onrender.com/api/accounts/"
         );
         setData((prev) => {
           return { usersData: usersData.data, accountsData: accountsData.data };
@@ -54,8 +55,7 @@ function App() {
         </h5>
       )}
       <Routes>
-        {/* <Route path="/" element={<addUser setMessage={setMessage}></addUser>} /> */}
-        <Route path="/" element={<Home></Home>} />
+        <Route path="/" element={<addUser setMessage={setMessage}></addUser>} />
         <Route
           path="/addUser"
           element={

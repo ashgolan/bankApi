@@ -38,10 +38,10 @@ export default function UpdateAccount({ data, setData, setMessage }) {
       setMessage({ status: false, text: "" });
 
       await axios.put(
-        `http://localhost:5000/api/accounts/updateAccount/${accountProps.id}/${accountProps.credit}`
+        `https://ashgolan-bankapi.onrender.com/api/accounts/updateAccount/${accountProps.id}/${accountProps.credit}`
       );
       const accountData2 = await axios.put(
-        `http://localhost:5000/api/accounts/`
+        `https://ashgolan-bankapi.onrender.com/api/accounts/`
       );
       setData((prev) => {
         return { ...prev, accountsData: accountData2.data };

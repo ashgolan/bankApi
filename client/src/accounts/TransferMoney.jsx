@@ -13,9 +13,11 @@ export default function TransferMoney({ setMessage, setData }) {
       setMessage({ status: false, text: "" });
 
       await axios.get(
-        `http://localhost:5000/api/accounts/transfer/${transferingDetails.client1Id}/${transferingDetails.client2Id}/${transferingDetails.amount}`
+        `https://ashgolan-bankapi.onrender.com/api/accounts/transfer/${transferingDetails.client1Id}/${transferingDetails.client2Id}/${transferingDetails.amount}`
       );
-      const data2 = await axios.get(`http://localhost:5000/api/accounts/`);
+      const data2 = await axios.get(
+        `https://ashgolan-bankapi.onrender.com/api/accounts/`
+      );
       setData((prev) => {
         return { ...prev, accountsData: data2.data };
       });

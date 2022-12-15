@@ -12,14 +12,21 @@ export default function AddUser({ data, setMessage, setData }) {
     e.preventDefault();
     try {
       setMessage({ status: false, text: "" });
-      await axios.post("http://localhost:5000/api/users/", user);
       await axios.post(
-        `http://localhost:5000/api/accounts/addAccount/${
+        "https://ashgolan-bankapi.onrender.com/api/users/",
+        user
+      );
+      await axios.post(
+        `https://ashgolan-bankapi.onrender.com/api/accounts/addAccount/${
           user.IdNumber
         }/${10000}`
       );
-      const users = await axios.get(`http://localhost:5000/api/users/`);
-      const accounts = await axios.get(`http://localhost:5000/api/accounts/`);
+      const users = await axios.get(
+        `https://ashgolan-bankapi.onrender.com/api/users/`
+      );
+      const accounts = await axios.get(
+        `https://ashgolan-bankapi.onrender.com/api/accounts/`
+      );
 
       setData((prev) => {
         return { ...prev, usersData: users.data, accountsData: accounts.data };

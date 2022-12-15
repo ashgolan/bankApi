@@ -11,9 +11,11 @@ export default function DepositMoney({ setMessage, setData }) {
       setMessage({ status: false, text: "" });
 
       await axios.get(
-        `http://localhost:5000/api/accounts/deposit/${dipositDetails.idNumber}/${dipositDetails.amount}`
+        `https://ashgolan-bankapi.onrender.com/api/accounts/deposit/${dipositDetails.idNumber}/${dipositDetails.amount}`
       );
-      const data2 = await axios.get(`http://localhost:5000/api/accounts/`);
+      const data2 = await axios.get(
+        `https://ashgolan-bankapi.onrender.com/api/accounts/`
+      );
       setData((prev) => {
         return { ...prev, accountsData: data2.data };
       });

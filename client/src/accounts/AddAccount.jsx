@@ -12,9 +12,11 @@ export default function AddAccount({ data, setMessage, setData }) {
       setMessage({ status: false, text: "" });
 
       axios.post(
-        `http://localhost:5000/api/accounts/addAccount/${accountData.id}/${accountData.credit}`
+        `https://ashgolan-bankapi.onrender.com/api/accounts/addAccount/${accountData.id}/${accountData.credit}`
       );
-      const data2 = await axios.get(`http://localhost:5000/api/accounts/`);
+      const data2 = await axios.get(
+        `https://ashgolan-bankapi.onrender.com/api/accounts/`
+      );
       setData((prev) => {
         return { ...prev, accountsData: data2.data };
       });
