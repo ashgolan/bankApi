@@ -9,6 +9,7 @@ import AddAccount from "./accounts/AddAccount";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Transaction from "./accounts/Transaction";
+import Home from "./Home";
 function App() {
   const [data, setData] = useState({
     usersData: [],
